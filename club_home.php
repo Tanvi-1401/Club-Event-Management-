@@ -11,7 +11,7 @@ if (!isset($_SESSION['username'])) {
 
 $role = $_SESSION['role'];
 
-// ✅ Handle Add Event
+// Handle Add Event
 if ($role == 'admin' && isset($_POST['add_event'])) {
     $club = $_POST['club'];
     $title = $_POST['title'];
@@ -23,13 +23,13 @@ if ($role == 'admin' && isset($_POST['add_event'])) {
                   VALUES ('$club', '$title', '$date', '$desc', '$link')");
 }
 
-// ✅ Handle Delete
+// Handle Delete
 if ($role == 'admin' && isset($_GET['delete'])) {
     $id = $_GET['delete'];
     $conn->query("DELETE FROM events WHERE id=$id");
 }
 
-// ✅ Handle AJAX Update (when form submitted)
+// Handle AJAX Update (when form submitted)
 if ($role == 'admin' && isset($_POST['ajax_update'])) {
     $id = $_POST['event_id'];
     $club = $_POST['club'];
@@ -100,7 +100,7 @@ if ($role == 'admin' && isset($_POST['ajax_update'])) {
 <div class="admin-form">
     <h3>Add New Event</h3>
     <form method="POST">
-        <input type="text" name="club" placeholder="Club Name (e.g., GDSC, IEEE)" required><br><br>
+        <input type="text" name="club" placeholder="Club Name (e.g., MLSC, GDSC, IEEE)" required><br><br>
         <input type="text" name="title" placeholder="Event Title" required><br><br>
         <input type="date" name="date" required><br><br>
         <textarea name="description" placeholder="Description" rows="3"></textarea><br><br>
@@ -154,7 +154,7 @@ if ($role == 'admin' && isset($_POST['ajax_update'])) {
     ?>
 </table>
 
-<!-- ✅ Edit Modal -->
+<!-- Edit Modal -->
 <div id="editModal" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeModal()">&times;</span>
@@ -186,7 +186,7 @@ function closeModal() {
     document.getElementById("editModal").style.display = "none";
 }
 
-// ✅ Handle AJAX Update
+// Handle AJAX Update
 document.getElementById("editForm").addEventListener("submit", function(e){
     e.preventDefault();
     let formData = new FormData(this);
