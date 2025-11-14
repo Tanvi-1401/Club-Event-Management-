@@ -8,7 +8,7 @@
 
         body {
             background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
-                        url('club_bg.jpg');
+                        url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1470&q=80');
             background-size: cover;
             background-position: center;
             height: 100vh;
