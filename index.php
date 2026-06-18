@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <style>
         body {
             font-family: Arial;
-            background: url('images/bg.jpg') no-repeat center center fixed;
+            background: url('images/club_image.png') no-repeat center center fixed;
             background-size: cover;
         }
         .container {
